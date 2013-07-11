@@ -35,29 +35,29 @@ you can just simpaly rotate it
 
 get the orietation of the image taken using this code in onActvityresult ....
 
-File imageFile = new File(imageUri.toString());
-       ExifInterface exif = new ExifInterface(imageFile.getAbsolutePath());
-       int orientation = exif.getAttributeInt(ExifInterface.TAG_ORIENTATION, ExifInterface.ORIENTATION_NORMAL);
-       int rotate = 0;
-       switch(orientation) {
-         case ORIENTATION_ROTATE_270:
-             rotate-=90;break;
-         case ORIENTATION_ROTATE_180:
+	File imageFile = new File(imageUri.toString());      
+       ExifInterface exif = new ExifInterface(imageFile.getAbsolutePath());         
+       int orientation = exif.getAttributeInt(ExifInterface.TAG_ORIENTATION, 					ExifInterface.ORIENTATION_NORMAL);
+       int rotate = 0;         
+       switch(orientation) {       
+         case ORIENTATION_ROTATE_270:         
+             rotate-=90;break;       
+         case ORIENTATION_ROTATE_180:         
              rotate-=90;break
-         case ORIENTATION_ROTATE_90:
-             rotate-=90;break
+         case ORIENTATION_ROTATE_90:        
+             rotate-=90;break          
        }
 
 -------------------------------------------------------------------------------------------------
 
-// create a matrix for the manipulation
- Matrix matrix = new Matrix();
- // resize the bit map
- matrix.postScale(scaleWidth, scaleHeight);
- // rotate the Bitmap
- matrix.postRotate(90);
+// create a matrix for the manipulation             
+ Matrix matrix = new Matrix();           
+ // resize the bit map          
+ matrix.postScale(scaleWidth, scaleHeight);          
+ // rotate the Bitmap          
+ matrix.postRotate(90);          
 
- // recreate the new Bitmap
+ // recreate the new Bitmap          
  Bitmap resizedBitmap = Bitmap.createBitmap(bitmapOriginal, 0, 0, widthOriginal, heightOriginal, matrix, true);
 
 ---------------------------------------------------------------------------------------------------
