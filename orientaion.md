@@ -35,9 +35,9 @@ you can just simpaly rotate it
 
 get the orietation of the image taken using this code in onActvityresult ....
 
-	File imageFile = new File(imageUri.toString());      
+       File imageFile = new File(imageUri.toString());      
        ExifInterface exif = new ExifInterface(imageFile.getAbsolutePath());         
-       int orientation = exif.getAttributeInt(ExifInterface.TAG_ORIENTATION, 					ExifInterface.ORIENTATION_NORMAL);
+       int orientation = exif.getAttributeInt(ExifInterface.TAG_ORIENTATION,ExifInterface.ORIENTATION_NORMAL);
        int rotate = 0;         
        switch(orientation) {       
          case ORIENTATION_ROTATE_270:         
