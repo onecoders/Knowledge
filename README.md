@@ -3,7 +3,4 @@ Knowledge
 
 Accumulation
 
-Java
-Android
-Code
-Others
+Java & Android & Code & Others
