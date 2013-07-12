@@ -41,11 +41,11 @@ get the orietation of the image taken using this code in onActvityresult ....
        int rotate = 0;         
        switch(orientation) {       
          case ORIENTATION_ROTATE_270:         
-             rotate-=90;break;       
+             rotate-=90;       
          case ORIENTATION_ROTATE_180:         
-             rotate-=90;break
+             rotate-=90;
          case ORIENTATION_ROTATE_90:        
-             rotate-=90;break          
+             rotate-=90;         
        }
 
 -------------------------------------------------------------------------------------------------
