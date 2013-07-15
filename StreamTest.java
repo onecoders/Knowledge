@@ -5,6 +5,7 @@ import java.io.BufferedOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
+import java.nio.channels.FileChannel;
 
 public class StreamTest {
 
@@ -24,13 +25,37 @@ public class StreamTest {
 		bos.close();
 	}
 
-	public static void copy(File from, File to) throws Exception {
-		write(to, read(from));
+	public static void copy(File copyFrom, File copyTo) throws Exception {
+		write(copyTo, read(copyFrom));
 	}
 
-	public static void rename(File renameFrom, File renameTo) throws Exception {
+	public static void copy2(File copyFrom, File copyTo) throws Exception {
+		if (!copyTo.exists()) {
+			copyTo.createNewFile();
+		}
+		FileChannel source = null;
+		FileChannel dest = null;
+		try {
+			source = new FileInputStream(copyFrom).getChannel();
+			dest = new FileOutputStream(copyTo).getChannel();
+			dest.transferFrom(source, 0, source.size());
+		} finally {
+			if (source != null) {
+				source.close();
+			}
+			if (dest != null) {
+				dest.close();
+			}
+		}
+	}
+
+	public static void rename1(File renameFrom, File renameTo) throws Exception {
 		copy(renameFrom, renameTo);
 		renameFrom.delete();
+	}
+
+	public static void rename2(File renameFrom, File renameTo) {
+		renameFrom.renameTo(renameTo);
 	}
 
 	public static void main(String[] args) {
@@ -39,7 +64,7 @@ public class StreamTest {
 		File copyFrom = new File(copyFromStr);
 		File copyTo = new File(copyToStr);
 		try {
-			copy(copyFrom, copyTo);
+			copy2(copyFrom, copyTo);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -49,7 +74,7 @@ public class StreamTest {
 		File renameFrom = new File(renameFromStr);
 		File renameTo = new File(renameToStr);
 		try {
-			rename(renameFrom, renameTo);
+			rename1(renameFrom, renameTo);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
