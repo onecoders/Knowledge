@@ -15,3 +15,24 @@ Ok... here's what you can try out:
     Finally, context.startActivity(newIntent)       
 
 
+
+Intent intent = getActivity().getPackageManager().getLaunchIntentForPackage(com.package.address);
+if (intent != null)
+{
+    // start the activity
+    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+    startActivity(intent);
+}
+else
+{
+    // bring user to the market
+    // or let them choose an app?
+    intent = new Intent(Intent.ACTION_VIEW);
+    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+    intent.setData(Uri.parse("market://details?id="+"com.package.address"));
+    startActivity(intent);
+}
+
+
+
+
