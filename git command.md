@@ -22,3 +22,11 @@ $ git reset --hard HEAD^
 $ git pull origin branchName
 
 ------------------------------------------------------------------------
+
+5.revert after commit and push
+
+$ git revert 364705c
+
+$ git push
+
+------------------------------------------------------------------------
