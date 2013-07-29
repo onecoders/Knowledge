@@ -34,8 +34,17 @@
         }
         } );
 ------------------------------------------------
-                Intent intent = new Intent();
-		intent.setAction(Intent.ACTION_MAIN);
-		intent.addCategory(Intent.CATEGORY_HOME);
-		startActivity(intent);
+         		Intent intent = new Intent();
+			intent.setAction(Intent.ACTION_MAIN);
+			intent.addCategory(Intent.CATEGORY_HOME);
+			startActivity(intent);
+------------------------------------------------
+		@Override
+		public boolean onKeyDown(int keyCode, KeyEvent event) {
+			if (keyCode == event.KEYCODE_BACK) {
+				textview.setText(R.string.action_settings);
+				return true;
+			}
+			return super.onKeyDown(keyCode, event);
+		}
 ------------------------------------------------
