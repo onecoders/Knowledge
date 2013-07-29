@@ -1,19 +1,19 @@
-listview.addHeaderView(totalExpense);    
-listview.addFooterView(totalExpense);    
+        listview.addHeaderView(totalExpense);    
+        listview.addFooterView(totalExpense);   
 //2013/7/27   
-
-getResources().getResourceEntryName(resid);    
-getResources().getResourceName(resid);    
-getResources().getResourcePackageName(resid);    
-getResources().getResourceTypeName(resid);    
+------------------------------------------------
+        getResources().getResourceEntryName(resid);    
+        getResources().getResourceName(resid);    
+        getResources().getResourcePackageName(resid);    
+        getResources().getResourceTypeName(resid);  
 //2013/7/28   
-
+------------------------------------------------
         adapter.notifyDataSetChanged();             
 ------------------------------------------------
         @Override
         public void onBackPressed() {
-		super.onBackPressed();
-		fragment.onBackPressed();
+             super.onBackPressed()
+             fragment.onBackPressed();
         }
 --------------------------------------------------
         setOnKeyListener( new OnKeyListener()
@@ -28,5 +28,5 @@ getResources().getResourceTypeName(resid);
         return false;
         }
         } );
-
 //2013/7/29   
+------------------------------------------------
