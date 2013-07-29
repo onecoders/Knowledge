@@ -1,13 +1,12 @@
+------------------2013/7/27------------------------------
         listview.addHeaderView(totalExpense);    
         listview.addFooterView(totalExpense);   
-//2013/7/27   
-------------------------------------------------
+------------------2013/7/28------------------------------
         getResources().getResourceEntryName(resid);    
         getResources().getResourceName(resid);    
         getResources().getResourcePackageName(resid);    
         getResources().getResourceTypeName(resid);  
-//2013/7/28   
-------------------------------------------------
+------------------2013/7/29------------------------------
         adapter.notifyDataSetChanged();             
 ------------------------------------------------
         @Override
@@ -28,5 +27,9 @@
         return false;
         }
         } );
-//2013/7/29   
+------------------------------------------------
+                Intent intent = new Intent();
+		intent.setAction(Intent.ACTION_MAIN);
+		intent.addCategory(Intent.CATEGORY_HOME);
+		startActivity(intent);
 ------------------------------------------------
