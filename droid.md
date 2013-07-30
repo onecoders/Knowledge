@@ -71,3 +71,5 @@
 ------------------------------------------------
 		alertDialog.setCanceledOnTouchOutside(true);
 ------------------------------------------------
+		editText.setError("Please enter a non-empty name");
+------------------------------------------------
