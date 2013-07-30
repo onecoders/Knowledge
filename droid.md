@@ -48,7 +48,15 @@
 			return super.onKeyDown(keyCode, event);
 		}
 ------------------------------------------------
-2013/7/30
+		@Override
+		public void onBackPressed() {
+    		if (this.currentDirectory.getParent() != null) {
+        		// --> browse one folder up...
+    		} else {
+        		// --> you are already at the root folder
+    		}
+		}
+------------------------------------------------2013/7/30
 ------------------------------------------------
 		public void onBackPressed() {
             String parent = file.getParent().toString();
