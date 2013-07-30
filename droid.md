@@ -66,3 +66,8 @@
                     android.R.layout.simple_list_item_1, myList ));
 												
              }
+------------------------------------------------
+		http://stackoverflow.com/questions/13590627/android-listview-headers
+------------------------------------------------
+		alertDialog.setCanceledOnTouchOutside(true);
+------------------------------------------------
