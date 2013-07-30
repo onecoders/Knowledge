@@ -34,7 +34,7 @@
         }
         } );
 ------------------------------------------------
-         		Intent intent = new Intent();
+         Intent intent = new Intent();
 			intent.setAction(Intent.ACTION_MAIN);
 			intent.addCategory(Intent.CATEGORY_HOME);
 			startActivity(intent);
@@ -48,3 +48,21 @@
 			return super.onKeyDown(keyCode, event);
 		}
 ------------------------------------------------
+2013/7/30
+------------------------------------------------
+		public void onBackPressed() {
+            String parent = file.getParent().toString();
+            file = new File( parent ) ;         
+            File list[] = file.listFiles();
+
+            myList.clear();
+
+            for( int i=0; i< list.length; i++)
+            {
+                myList.add( list[i].getName() );
+            }
+            Toast.makeText(getApplicationContext(), parent,          Toast.LENGTH_LONG).show(); 
+            setListAdapter(new ArrayAdapter<String>(this,
+                    android.R.layout.simple_list_item_1, myList ));
+												
+             }
