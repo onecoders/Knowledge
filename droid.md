@@ -56,7 +56,8 @@
         		// --> you are already at the root folder
     		}
 		}
-------------------------------------------------2013/7/30
+------------------------------------------------
+2013/7/30
 ------------------------------------------------
 		public void onBackPressed() {
             String parent = file.getParent().toString();
@@ -80,4 +81,28 @@
 		alertDialog.setCanceledOnTouchOutside(true);
 ------------------------------------------------
 		editText.setError("Please enter a non-empty name");
+------------------------------------------------
+2013/7/31
+------------------------------------------------
+		private void createFolder(String newFolderName) {
+		File newFolder = new File(currentParent, newFolderName);
+		if (newFolder.exists()) {
+			Toast.makeText(mContext, R.string.failToCreate, Toast.LENGTH_SHORT)
+					.show();
+		} else {
+			boolean success = newFolder.mkdirs();
+			if (success) {
+				Toast.makeText(mContext, R.string.foldercreated,
+						Toast.LENGTH_SHORT).show();
+				currentFiles = currentParent.listFiles();
+				inflateListView(currentFiles);
+			}
+		}
+		}
+------------------------------------------------
+
+------------------------------------------------
+
+------------------------------------------------
+
 ------------------------------------------------
