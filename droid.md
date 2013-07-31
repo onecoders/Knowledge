@@ -105,7 +105,16 @@
         android:shadowDy="1"
         android:shadowRadius="2"
 ------------------------------------------------
+		textview = (TextView) findViewById(R.id.textview);
 
+		SpannableStringBuilder ssb = new SpannableStringBuilder(
+				"Here's a smiley  , and here's a link http://blog.stylingandroid.com");
+		Bitmap smiley = BitmapFactory.decodeResource(getResources(),
+				R.drawable.arrow);
+		ssb.setSpan(new ImageSpan(smiley), 16, 17,
+				Spannable.SPAN_INCLUSIVE_INCLUSIVE);
+		textview.setText(ssb, BufferType.SPANNABLE);
+		Linkify.addLinks(textview, Linkify.WEB_URLS);
 ------------------------------------------------
 
 ------------------------------------------------
