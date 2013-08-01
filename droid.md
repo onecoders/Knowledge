@@ -154,7 +154,15 @@
 
 
 ------------------------------------------------
-<string-array name="cloud_names">
+<string-array name="cloud_images">
+        <item>@drawable/icon_google_drive</item>
+        <item>@drawable/icon_dropbox</item>
+        <item>@drawable/icon_sugar_sync</item>
+        <item>@drawable/icon_baidu_cloud</item>
+        <item>@drawable/icon_kingsorf_cloud</item>
+        <item>@drawable/icon_sina_cloud</item>
+    </string-array>
+    <string-array name="cloud_names">
         <item>Google Drive</item>
         <item>Dropbox</item>
         <item>SugarSync</item>
@@ -163,14 +171,14 @@
         <item>Sina Cloud</item>
     </string-array>
 
-<integer-array name="cloud_images">
-        <item>@drawable/icon_google_drive</item>
-        <item>@drawable/icon_dropbox</item>
-        <item>@drawable/icon_sugar_sync</item>
-        <item>@drawable/icon_baidu_cloud</item>
-        <item>@drawable/icon_kingsorf_cloud</item>
-        <item>@drawable/icon_sina_cloud</item>
-    </integer-array>
+		TypedArray cloud_images = getResources().obtainTypedArray(
+				R.array.cloud_images);
+		String[] cloud_names = getResources().getStringArray(
+				R.array.cloud_names);
+		for (int i = 0; i < cloud_names.length; i++) {
+			addCloudItem(cloud_images.getResourceId(i, 0), cloud_names[i],
+					cloud_items, null);
+		}
 ------------------------------------------------
 ------------------------------------------------
 ------------------------------------------------
