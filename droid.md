@@ -116,5 +116,37 @@
 		textview.setText(ssb, BufferType.SPANNABLE);
 		Linkify.addLinks(textview, Linkify.WEB_URLS);
 ------------------------------------------------
+2013/8/1
+------------------------------------------------
+<HorizontalScrollView
+        android:id="@+id/locationScroll"
+        android:layout_width="match_parent"
+        android:layout_height="35dip"
+        android:scrollbars="none" >    // no scrollbar
+
+        <LinearLayout
+            android:id="@+id/location"
+            android:layout_width="match_parent"
+            android:layout_height="35dip"
+            android:background="#e8e8e8"
+            android:gravity="left|center_vertical"
+            android:isScrollContainer="true"
+            android:orientation="horizontal"
+            android:showDividers="middle" >
+        </LinearLayout>
+</HorizontalScrollView>
+------------------------------------------------
+		// auto scroll to right
+		new Handler().postDelayed(new Runnable() {
+
+				@Override
+				public void run() {
+					s.fullScroll(HorizontalScrollView.FOCUS_RIGHT);
+				}
+			}, 100L);
+------------------------------------------------
 
 ------------------------------------------------
+
+------------------------------------------------
+
