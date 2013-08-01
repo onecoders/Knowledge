@@ -154,6 +154,23 @@
 
 
 ------------------------------------------------
+<string-array name="cloud_names">
+        <item>Google Drive</item>
+        <item>Dropbox</item>
+        <item>SugarSync</item>
+        <item>Baidu Cloud</item>
+        <item>Kingsoft Cloud</item>
+        <item>Sina Cloud</item>
+    </string-array>
+
+<integer-array name="cloud_images">
+        <item>@drawable/icon_google_drive</item>
+        <item>@drawable/icon_dropbox</item>
+        <item>@drawable/icon_sugar_sync</item>
+        <item>@drawable/icon_baidu_cloud</item>
+        <item>@drawable/icon_kingsorf_cloud</item>
+        <item>@drawable/icon_sina_cloud</item>
+    </integer-array>
 ------------------------------------------------
 ------------------------------------------------
 ------------------------------------------------
