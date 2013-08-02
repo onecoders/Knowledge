@@ -189,6 +189,25 @@ http://www.grokkingandroid.com/adding-actionbarsherlock-to-your-project/
 must extends SherlockActivity     
 then can use getSupportActionBar() to get the actionBar   
 ------------------------------------------------
+		private void setActinBarCenterTitleCustomView() {
+		ActionBar actionBar = getSupportActionBar();
+		// set LayoutParams
+		ActionBar.LayoutParams params = new ActionBar.LayoutParams(
+				ActionBar.LayoutParams.WRAP_CONTENT,
+				ActionBar.LayoutParams.WRAP_CONTENT, Gravity.CENTER);
+		// Set display to custom next
+		actionBar.setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
+		// Do any other config to the action bar
+		actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_STANDARD);
+		actionBar.setDisplayShowHomeEnabled(true);
+		actionBar.setDisplayHomeAsUpEnabled(true);
+		actionBar.setDisplayShowTitleEnabled(false);
+		// Get custom view
+		TextView actionbarTitleCenterView = (TextView) LayoutInflater
+				.from(this).inflate(R.layout.actionbar_title, null);
+		actionbarTitleCenterView.setText(R.string.config);
+		// Now set custom view
+		actionBar.setCustomView(actionbarTitleCenterView, params);
 ------------------------------------------------
 ------------------------------------------------
 ------------------------------------------------
