@@ -209,6 +209,8 @@ then can use getSupportActionBar() to get the actionBar
 		// Now set custom view
 		actionBar.setCustomView(actionbarTitleCenterView, params);
 ------------------------------------------------
+http://stackoverflow.com/questions/10364045/actionbarsherlock-actionbar-custom-background-with-divider
+actionbar bottom divider
 ------------------------------------------------
 ------------------------------------------------
 
