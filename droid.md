@@ -212,5 +212,45 @@ then can use getSupportActionBar() to get the actionBar
 http://stackoverflow.com/questions/10364045/actionbarsherlock-actionbar-custom-background-with-divider
 actionbar bottom divider
 ------------------------------------------------
+2013/8/5
 ------------------------------------------------
+		hideView.animate()
+                .alpha(0f)
+                .setDuration(mShortAnimationDuration)
+                .setListener(new AnimatorListenerAdapter() {
+                    @Override
+                    public void onAnimationEnd(Animator animation) {
+                        hideView.setVisibility(View.GONE);
+                    }
+                });
+------------------------------------------------
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android" >
 
+    <item>
+        <rotate
+            android:drawable="@drawable/sync_pause"
+            android:fromDegrees="0"
+            android:pivotX="50%"
+            android:pivotY="50%"
+            android:toDegrees="0" />
+    </item>
+    <item>
+        <rotate
+            android:drawable="@drawable/outer1"
+            android:fromDegrees="0"
+            android:pivotX="50%"
+            android:pivotY="50%"
+            android:toDegrees="1080" />
+        
+    </item>
+
+</layer-list>
+		later = outer
+------------------------------------------------
+------------------------------------------------
+------------------------------------------------
+------------------------------------------------
+------------------------------------------------
+------------------------------------------------
+------------------------------------------------
+------------------------------------------------
