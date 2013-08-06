@@ -247,6 +247,15 @@ actionbar bottom divider
 </layer-list>
 		later = outer
 ------------------------------------------------
+2013/8/6
+------------------------------------------------
+		public void onClick(View v) {  
+		edit.setVisibility(View.VISIBLE);  
+		TranslateAnimation slide = new TranslateAnimation(0, 0, 100,0 );   
+		slide.setDuration(1000);   
+		slide.setFillAfter(true);   
+		edit.startAnimation(slide);  
+		}  
 ------------------------------------------------
 ------------------------------------------------
 ------------------------------------------------
