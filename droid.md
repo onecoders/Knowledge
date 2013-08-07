@@ -257,6 +257,33 @@ actionbar bottom divider
 		edit.startAnimation(slide);  
 		}  
 ------------------------------------------------
+2013/8/7
+------------------------------------------------
+		<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:bottom="2dp">
+        <shape android:shape="line">
+            <stroke
+                    android:color="#eeeeee"
+                    android:width="2dp"
+                    />
+            <size
+                    android:height="4dp"
+                    />
+        </shape>
+    </item>
+    <item android:top="2dp">
+        <shape android:shape="line">
+            <stroke
+                    android:color="#c1c1c1"
+                    android:width="2dp"
+                    />
+            <size
+                    android:height="4dp"
+                    />
+        </shape>
+    </item>
+</layer-list>
 ------------------------------------------------
 ------------------------------------------------
 ------------------------------------------------
